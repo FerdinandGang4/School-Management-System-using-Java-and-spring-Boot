@@ -1,6 +1,6 @@
 package com.ferdi.assignment10b.Domain;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +12,13 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Course {
-  private Long courseId;
-  private String courseCode;
-  private String courseName;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long courseId;
+
+    @Column(nullable = false)
+    private String courseCode;
+
+    @Column(nullable = false)
+    private String courseName;
 }
