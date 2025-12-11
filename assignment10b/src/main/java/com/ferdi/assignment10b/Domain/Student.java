@@ -1,23 +1,26 @@
 package com.ferdi.assignment10b.Domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "students")
+@ToString
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long studentId;// : long (Primary Key)
 
-    @Column(nullable = false)
+  @Column(nullable = true)
    private String studentNumber;
 
-    @Column(nullable = false)
+   @Column(nullable = false)
    private String firstName;
 
    private String middleName;

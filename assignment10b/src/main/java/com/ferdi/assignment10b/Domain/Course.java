@@ -13,7 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Course {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long courseId;
 
     @Column(nullable = false)

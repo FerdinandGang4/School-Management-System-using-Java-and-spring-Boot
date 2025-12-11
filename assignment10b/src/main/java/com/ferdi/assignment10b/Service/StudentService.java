@@ -9,13 +9,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class StudentService {
+public class StudentService implements StudentServiceInterface {
     @Autowired
     private StudentRepository studentRepository;
 
-    public Student createStudent(Student student)
-    {
-        return studentRepository.save(student);
+    @Override
+    public Student createStudent(Student student) {
+       return studentRepository.save(student);
     }
 
     public List<Student> getAllStudents()
